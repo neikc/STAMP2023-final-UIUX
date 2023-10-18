@@ -1,0 +1,294 @@
+﻿@page
+@model VotingModel
+@{
+    ViewData["Title"] = "Xếp hạng";
+}
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="device-width, initial-scale=1, minimum-scale=1"/>
+        <link rel="stylesheet" href="~/css/ranking-style.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/searchbar-style.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/base.css" asp-append-version="true"/>
+    </head>
+
+<body>
+    <script src="~/js/navbar.js"></script>
+    <script src="~/js/common.js"></script>
+    <!-- Banner -->
+    <script src="~/js/slideshow.js"></script>
+    <script>
+        window.onload = ()=>{init_slide_show(["./image/shared/banner1.jpg",
+        "./image/shared/banner2.jpg", "./image/shared/banner3.jpg"]);};
+    </script>
+    <div class="banner">
+        <!-- Slideshow container -->
+        <div id="slideshow-container"></div>
+        <div class="page-title">
+            BÌNH CHỌN
+        </div>
+    </div>
+    
+    <!-- Top stamps -->
+    <div class="container-fluid horizontal-scrollable" style="margin-top: 40px">
+        <div class="row flex-nowrap" style="padding-bottom: 30px">
+            <div class="col-4">
+                <div class="info-card container">
+                    <div class="row justify-content-between">
+                        <p class="col-7 cus-card-title">Mừng ngày Phụ nữ Việt Nam 20/10</p>
+                        <div class="col-4" style="display: flex; align-items: center;">
+                            <p class="cus-card-author">Đ.M.Khoa</p>
+                        </div>
+                    </div>
+                    <div class="submission-box">
+                        <div class="stamp-frame">
+                            <img src="~/image/shared/stamp.png" alt="" class="stamp-img">
+                        </div>
+                    </div>
+                    <div class="row justify-content-around" style="margin-top: 10px">
+                        <button default-color="rgb(232, 170, 66)" onclick="like_action()" class="like-btn">
+                            <p class="like-number number">00</p>
+                            <img class="like-image" src="~/image/Ranking/like.svg"/>
+                        </button>
+                        <div class="stt-btn">
+                            <p class="number stt-number">#02</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="info-card container">
+                    <div class="row justify-content-between">
+                        <p class="col-7 cus-card-title">Mừng ngày Phụ nữ Việt Nam 20/10</p>
+                        <div class="col-4" style="display: flex; align-items: center;">
+                            <p class="cus-card-author">Đ.M.Khoa</p>
+                        </div>
+                    </div>
+                    <div class="submission-box">
+                        <div class="stamp-frame">
+                            <img src="~/image/shared/stamp.png" alt="" class="stamp-img">
+                        </div>
+                    </div>
+                    <div class="row justify-content-around" style="margin-top: 10px">
+                        <button default-color="rgb(232, 170, 66)" onclick="like_action()" class="like-btn">
+                            <p class="like-number number">01</p>
+                            <img class="like-image" src="~/image/Ranking/like.svg"/>
+                        </button>
+                        <div class="stt-btn">
+                            <p class="number stt-number">#01</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="info-card container">
+                    <div class="row justify-content-between">
+                        <p class="col-7 cus-card-title">Mừng ngày Phụ nữ Việt Nam 20/10</p>
+                        <div class="col-4" style="display: flex; align-items: center;">
+                            <p class="cus-card-author">Đ.M.Khoa</p>
+                        </div>
+                    </div>
+                    <div class="submission-box">
+                        <div class="stamp-frame">
+                            <img src="~/image/shared/stamp.png" alt="" class="stamp-img">
+                        </div>
+                    </div>
+                    <div class="row justify-content-around" style="margin-top: 10px">
+                        <button default-color="rgb(232, 170, 66)" onclick="like_action()" class="like-btn">
+                            <p class="like-number number">00</p>
+                            <img class="like-image" src="~/image/Ranking/like.svg"/>
+                        </button>
+                        <div class="stt-btn">
+                            <p class="number stt-number">#02</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="info-card container">
+                    <div class="row justify-content-between">
+                        <p class="col-7 cus-card-title">Mừng ngày Phụ nữ Việt Nam 20/10</p>
+                        <div class="col-4" style="display: flex; align-items: center;">
+                            <p class="cus-card-author">Đ.M.Khoa</p>
+                        </div>
+                    </div>
+                    <div class="submission-box">
+                        <div class="stamp-frame">
+                            <img src="~/image/shared/stamp.png" alt="" class="stamp-img">
+                        </div>
+                    </div>
+                    <div class="row justify-content-around" style="margin-top: 10px">
+                        <button default-color="rgb(232, 170, 66)" onclick="like_action()" class="like-btn">
+                            <p class="like-number number">00</p>
+                            <img class="like-image" src="~/image/Ranking/like.svg"/>
+                        </button>
+                        <div class="stt-btn">
+                            <p class="number stt-number">#02</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="info-card container">
+                    <div class="row justify-content-between">
+                        <p class="col-7 cus-card-title">Mừng ngày Phụ nữ Việt Nam 20/10</p>
+                        <div class="col-4" style="display: flex; align-items: center;">
+                            <p class="cus-card-author">Đ.M.Khoa</p>
+                        </div>
+                    </div>
+                    <div class="submission-box">
+                        <div class="stamp-frame">
+                            <img src="~/image/shared/stamp.png" alt="" class="stamp-img">
+                        </div>
+                    </div>
+                    <div class="row justify-content-around" style="margin-top: 10px">
+                        <button default-color="rgb(232, 170, 66)" onclick="like_action()" class="like-btn">
+                            <p class="like-number number">00</p>
+                            <img class="like-image" src="~/image/Ranking/like.svg"/>
+                        </button>
+                        <div class="stt-btn">
+                            <p class="number stt-number">#02</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <script>
+            function showPopUp() {
+                console.log("ok");
+                const title = event.currentTarget.querySelector(".cus-card-title");
+                const author = event.currentTarget.querySelector(".cus-card-author");
+                const popup = document.getElementById("popup");
+                const ptitle = popup.getElementsByClassName("popup-title")[0];
+                ptitle.innerText = title.innerText;
+                popup.getElementsByClassName("popup-author")[0].innerText = author.innerText;
+                @* Load mô tả từ backend vào dòng bên dưới *@
+                popup.getElementsByClassName("popup-describe")[0].innerText = "Mô tả của tranh";
+                popup.classList.remove("display-none");
+                const overlay = document.getElementById("overlay");
+                overlay.classList.remove("display-none");
+                const body = document.querySelector("body");
+                body.style.overflow = "hidden";
+                resize_frame();
+            }
+            
+            let cards = document.getElementsByClassName("info-card");
+            for (let i = 0; i <cards.length; i++) {
+                cards[i].addEventListener("click", showPopUp);
+            }
+            
+            hidePopUp = () => {
+                const popup = document.getElementById("popup");
+                popup.classList.add("display-none");
+                const overlay = document.getElementById("overlay");
+                overlay.classList.add("display-none");
+                const body = document.querySelector("body");
+                body.style.overflow = "auto";
+            }
+        </script>
+    </div>
+    <div class="container-fluid justify-content-center display-none" id="popup">
+        <div class="row">
+            <div class="col-6">
+                <div class="submission-box">
+                    <div class="stamp-frame">
+                        <img src="~/image/shared/stamp.png" alt="" class="stamp-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 popup-info">
+                <div class="popup-title">Hello</div>
+                <div class="popup-author">Author</div>
+                <div class="popup-describe">Describe</div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="display-none" onclick="hidePopUp()"></div>
+    
+    @* Search box *@
+    <div class="search-box">
+        <div class="search">
+            <button class="search-btn" onclick="">
+                <img class="search-img" src="~/icon/search.png" />
+            </button>
+            <input type="text" id="trigger" class="search-input" placeholder="Tìm kiếm" />
+        </div>
+    </div>
+    <!-- Contest Stamps -->
+    <div style="margin-bottom: 40px; margin-top: 20px">
+        <div class="contest-container list-group-item">
+            <p class="stt-contest-box">#01</p>
+            <p class="contest-name">Mừng ngày Phụ nữ Việt Nam</p>
+            <p class="contest-author stamp-author">Đoàn Minh Khoa</p>
+            <button default-color="rgb(217, 217, 217)" onclick="like_action()" class="contest-like-box like-btn">
+                <p class="contest-like-number like-number number">01</p>
+                <img class="like-image" src="~/image/Ranking/like.svg"/>
+            </button>
+        </div>
+        <div class="contest-container list-group-item">
+            <p class="stt-contest-box">#02</p>
+            <p class="contest-name">Mừng ngày Phụ nữ Việt Nam</p>
+            <p class="contest-author stamp-author">Đoàn Minh Khoa</p>
+            <button default-color="rgb(217, 217, 217)" onclick="like_action()" class="contest-like-box like-btn">
+                <p class="contest-like-number like-number number">00</p>
+                <img class="like-image" src="~/image/Ranking/like.svg"/>
+            </button>
+        </div>
+        <div class="contest-container list-group-item">
+            <p class="stt-contest-box">#03</p>
+            <p class="contest-name">Mừng ngày Phụ nữ Việt Nam</p>
+            <p class="contest-author stamp-author">Đoàn Minh Khoa</p>
+            <button default-color="rgb(217, 217, 217)" onclick="like_action()" class="contest-like-box like-btn">
+                <p class="contest-like-number like-number number">00</p>
+                <img class="like-image" src="~/image/Ranking/like.svg" />
+            </button>
+        </div>
+        <div class="contest-container list-group-item">
+            <p class="stt-contest-box">#04</p>
+            <p class="contest-name">Mừng ngày Phụ nữ Việt Nam</p>
+            <p class="contest-author stamp-author">Đoàn Minh Khoa</p>
+            <button default-color="rgb(217, 217, 217)" onclick="like_action()" class="contest-like-box like-btn">
+                <p class="contest-like-number like-number number">00</p>
+                <img class="like-image" src="~/image/Ranking/like.svg" />
+            </button>
+        </div>
+        
+    <!-- JavaScript -->
+    <script>
+        function like_action() {
+            event.stopPropagation();
+            var current = event.currentTarget
+            const default_color = current.getAttribute("default-color");
+            let current_style = window.getComputedStyle(current);
+            var like_number = current.getElementsByClassName("like-number")[0];
+            const parent = current.parentElement;
+            const name = parent.getElementsByClassName("contest-name");
+            if (current_style.backgroundColor === default_color){
+                current.style.backgroundColor = "rgb(66, 133, 244)";
+                current.children[1].src = "image/Ranking/like_bold.svg";
+                like_number.style.color = "white";
+                like_number.textContent = parseInt(like_number.textContent) + 1;
+                if (like_number.textContent<10) {
+                    like_number.textContent = "0" + like_number.textContent;
+                }
+                if (name.length>0) {
+                    name[0].style.color = "#6EACE3";
+                }
+
+                @* Code truyền request like ở đây *@
+            }
+            else {
+                current.style.backgroundColor = default_color;
+                current.children[1].src = "image/Ranking/like.svg";
+                like_number.style.color = "black";
+                like_number.textContent = parseInt(like_number.textContent) - 1;
+                if (like_number.textContent<10) {
+                    like_number.textContent = "0" + like_number.textContent;
+                }
+                if (name.length>0) {
+                    name[0].style.color = "#000";
+                }
+
+                @* Code request dislike ở đây *@
+            }
+        }
+    </script>
+</body>
